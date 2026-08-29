@@ -1,0 +1,7 @@
+# Local dev / verification tooling (not part of the deployed site)
+review/
+node_modules/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
