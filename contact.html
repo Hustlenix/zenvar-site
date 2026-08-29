@@ -3,97 +3,110 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Contact · Zenvar</title>
-<meta name="description" content="Start a project with Zenvar. One short form: tell us the number you want to move, and we reply fast with the number we will move first." />
-<meta name="theme-color" content="#0B0E13" />
+<title>Contact — Zenvar</title>
+<meta name="description" content="Start a project with Zenvar. Tell us what you are building and we will take it from there." />
+<meta name="theme-color" content="#0B0B0B" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;450;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css" />
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230B0E13'/%3E%3Cpath d='M9 20h5v-8h4v8h5' fill='none' stroke='%236EE7A8' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+<link rel="icon" type="image/svg+xml" href="zenvar-logo.svg" />
 </head>
 <body>
 
-<div class="env" aria-hidden="true"></div>
 <div class="grain" aria-hidden="true"></div>
 
 <header id="header">
-  <nav class="container">
-    <a class="brand" href="index.html">Zenvar<span class="dot">.</span></a>
-    <div class="nav-links">
+  <div class="container nav-inner">
+    <a class="nav-brand" href="index.html">
+      <img class="logo" src="zenvar-logo.svg" alt="" />
+      <span class="wm">Zenvar</span>
+    </a>
+    <nav class="nav-links">
+      <a href="work.html">Work</a>
       <a href="services.html">Services</a>
-      <a href="number.html">The Number</a>
       <a href="process.html">Process</a>
-      <a href="team.html">Team</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="contact.html" class="nav-cta active">Start a Project</a>
-    </div>
-  </nav>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="nav-cta">Start a Project <span class="arr">↗</span></a>
+    </nav>
+  </div>
 </header>
 
-<section class="page-hero" id="top">
+<section class="page-hero">
   <div class="container">
-    <div class="crumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Contact</div>
-    <div class="kicker reveal">Start a project</div>
-    <h1 class="reveal">Tell us the number <span class="accent">you want to move.</span></h1>
-    <p class="sub reveal">One short form. No proposal PDFs stacked in a queue. We reply fast, and we bring the number we would move first.</p>
+    <div class="crumb"><a href="index.html">Home</a> / Contact</div>
+    <h1 class="display reveal">Start a<br/>project.</h1>
+    <p class="sub reveal">Tell us what you are building. One week to first draft, one number to measure.</p>
   </div>
 </section>
 
-<section style="padding-top:24px" id="contact">
+<section class="sec--black" style="padding-top:10px;">
   <div class="container">
-    <div class="contact-grid">
-      <div class="contact-info reveal">
-        <h3>What you get back</h3>
-        <ul>
-          <li><b>A fast reply.</b> We answer quickly with a person, not an autoresponder.</li>
-          <li><b>One number.</b> The single metric we would move first for your business.</li>
-          <li><b>A small first step.</b> Proof of progress before we talk about a bigger scope.</li>
-        </ul>
-        <p class="contact-email">Direct: <a href="mailto:hello@zenvar.co">hello@zenvar.co</a></p>
-        <p class="contact-meta">Built in India &middot; serving small and mid-size businesses</p>
+    <div class="sec-head reveal"><span class="sec-no">The intake</span></div>
+    <h2 class="big reveal" style="font-size:clamp(28px,5vw,64px);">What are you<br/>building?</h2>
+
+    <form class="lead-form reveal" id="leadForm" novalidate>
+      <div class="fld">
+        <label for="kind">Project type</label>
+        <select id="kind" name="kind">
+          <option value="">Choose one</option>
+          <option>Website</option>
+          <option>Content</option>
+          <option>Automation</option>
+          <option>Multiple / unclear</option>
+        </select>
       </div>
-      <form id="leadForm" class="lead-form reveal" novalidate>
-        <div class="field">
-          <label for="name">Your name</label>
-          <input id="name" name="name" type="text" placeholder="How should we address you?" autocomplete="name" required />
-        </div>
-        <div class="field">
-          <label for="email">Your email</label>
-          <input id="email" name="email" type="email" placeholder="you@company.com" autocomplete="email" required />
-        </div>
-        <div class="field">
-          <label for="service">What do you need?</label>
-          <select id="service" name="service" required>
-            <option value="A website">A website</option>
-            <option value="AI automation">AI automation</option>
-            <option value="Content and reels">Content and reels</option>
-            <option value="Not sure yet">Not sure yet</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="msg">The number you want to move</label>
-          <textarea id="msg" name="msg" rows="4" placeholder="e.g. More enquiries from local searches, or a faster reply to leads"></textarea>
-        </div>
-        <div id="form-status" class="form-status" aria-live="polite"></div>
-        <button type="submit" class="btn btn-primary btn-block">Send it</button>
-      </form>
-    </div>
+      <div class="fld">
+        <label for="name">Your name</label>
+        <input id="name" name="name" type="text" autocomplete="name" />
+      </div>
+      <div class="fld">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" />
+      </div>
+      <div class="fld">
+        <label for="msg">What is the number you want to move?</label>
+        <textarea id="msg" name="msg"></textarea>
+      </div>
+      <button class="btn btn--line-dark" type="submit">Send it <span class="arr">↗</span></button>
+      <div class="form-status" id="form-status" aria-live="polite"></div>
+      <p style="margin-top:30px;color:var(--gray);font-size:15px;max-width:46ch;">Or write to us directly: <a href="mailto:hello@zenvar.co" style="color:var(--white);border-bottom:1px solid var(--gray);">hello@zenvar.co</a></p>
+    </form>
   </div>
 </section>
 
 <footer>
-  <div class="container footer-wrap">
-    <div class="brand">Zenvar<span class="dot">.</span></div>
-    <div class="footer-nav">
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="number.html">The Number</a>
-      <a href="process.html">Process</a>
-      <a href="team.html">Team</a>
-      <a href="pricing.html">Pricing</a>
+  <div class="container">
+    <div class="foot-hero">
+      <img class="logo" src="zenvar-logo.svg" alt="Zenvar" />
+      <div class="fwm">Zenvar</div>
+      <div class="ftag">Build what moves.</div>
     </div>
-    <div class="footer-meta">Signal over noise. Numbers over feelings.</div>
+    <div class="foot-grid">
+      <div class="foot-col">
+        <h4>Services</h4>
+        <a href="services.html">Content</a>
+        <a href="services.html">Web</a>
+        <a href="services.html">Automation</a>
+      </div>
+      <div class="foot-col">
+        <h4>Studio</h4>
+        <a href="work.html">Work</a>
+        <a href="about.html">About</a>
+        <a href="process.html">Process</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="foot-col">
+        <h4>Social</h4>
+        <a href="#">Instagram</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">YouTube</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Zenvar</span>
+      <span>India / Worldwide</span>
+    </div>
   </div>
 </footer>
 

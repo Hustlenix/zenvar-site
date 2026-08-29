@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" role="img" aria-label="Zenvar">
+  <!-- Main circular badge -->
+  <circle cx="50" cy="50" r="47" fill="#FFFFFF" stroke="#183D68" stroke-width="5"/>
+  <!-- Thin inner ring for definition -->
+  <circle cx="50" cy="50" r="40.5" fill="none" stroke="#E7ECF2" stroke-width="0.75"/>
+
+  <!-- Calligraphic black Z, centered slightly low for optical balance -->
+  <path d="M31 34.5
+           C 36 33.8, 43 33.2, 51 32.8
+           C 59 32.4, 65 32.6, 69.5 33.4
+           L 67.5 38.2
+           C 64.5 37.7, 61.5 37.4, 58.5 37.3
+           L 41.5 37.6
+           C 40 42.2, 38.5 46.6, 37 51
+           C 36 53.5, 34.9 56, 33.7 58.5
+           L 66.5 58.2
+           C 66 61.6, 65.4 64.7, 64.7 67.6
+           L 30.5 67.9
+           C 31.2 63.2, 32 58.6, 33 54
+           C 34 49.6, 35.2 45.4, 36.6 41.5
+           C 34.7 39.2, 32.8 36.9, 31 34.5 Z"
+        fill="#111111"/>
+
+  <!-- Verification badge overlapping top-right -->
+  <circle cx="80.5" cy="19.5" r="14" fill="#7CA8E4" stroke="#FFFFFF" stroke-width="2.5"/>
+  <path d="M74.2 19.3 L 79 24.2 L 87 14.5"
+        fill="none" stroke="#183D68" stroke-width="3.4"
+        stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

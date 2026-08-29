@@ -3,93 +3,119 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Services · Zenvar</title>
-<meta name="description" content="Zenvar services: website development, AI automation, and content and reels. Each with one owner and one weekly number, paid for results." />
-<meta name="theme-color" content="#0B0E13" />
+<title>Services — Zenvar</title>
+<meta name="description" content="Zenvar services: content growth, website builds and business automation. Each with one owner and one measured number." />
+<meta name="theme-color" content="#0B0B0B" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;450;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css" />
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230B0E13'/%3E%3Cpath d='M9 20h5v-8h4v8h5' fill='none' stroke='%236EE7A8' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+<link rel="icon" type="image/svg+xml" href="zenvar-logo.svg" />
 </head>
 <body>
 
-<div class="env" aria-hidden="true"></div>
 <div class="grain" aria-hidden="true"></div>
 
 <header id="header">
-  <nav class="container">
-    <a class="brand" href="index.html">Zenvar<span class="dot">.</span></a>
-    <div class="nav-links">
+  <div class="container nav-inner">
+    <a class="nav-brand" href="index.html">
+      <img class="logo" src="zenvar-logo.svg" alt="" />
+      <span class="wm">Zenvar</span>
+    </a>
+    <nav class="nav-links">
+      <a href="work.html">Work</a>
       <a href="services.html" class="active">Services</a>
-      <a href="number.html">The Number</a>
       <a href="process.html">Process</a>
-      <a href="team.html">Team</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="contact.html" class="nav-cta">Start a Project</a>
-    </div>
-  </nav>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="nav-cta">Start a Project <span class="arr">↗</span></a>
+    </nav>
+  </div>
 </header>
 
-<section class="page-hero" id="top">
+<section class="page-hero">
   <div class="container">
-    <div class="crumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Services</div>
-    <div class="kicker reveal">What we do</div>
-    <h1 class="reveal">Three services. <span class="accent">One goal: move a number.</span></h1>
-    <p class="sub reveal">No busywork, no vanity metrics. Every service has one owner and one weekly number, and we are paid for results, not for looking busy.</p>
+    <div class="crumb"><a href="index.html">Home</a> / Services</div>
+    <h1 class="display reveal">Three<br/>services.</h1>
+    <p class="sub reveal">One owner, one weekly number, paid on results. No busywork, no vanity metrics.</p>
   </div>
 </section>
 
-<section id="services">
+<section class="sec--black" style="padding-top:10px;">
   <div class="container">
-    <div class="svc-grid">
-      <div class="svc-card reveal">
-        <div class="top"><span class="idx">S&nbsp;/&nbsp;01</span><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div></div>
-        <h3>Website Development</h3>
-        <p>Modern, mobile-responsive site with clear service pages, lead forms, WhatsApp contact, and one clear call-to-action. Built to get found and contacted.</p>
-        <div class="svc-metric"><b>Moves:</b> leads and enquiries</div>
-        <a class="svc-link" href="contact.html">Get a website <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <div class="svc-rows reveal">
+      <div class="svc-row" style="cursor:default;">
+        <span class="num">01</span>
+        <div>
+          <span class="name">Content<br/>Growth</span>
+          <p class="reveal" style="margin-top:22px;max-width:52ch;color:var(--gray);font-size:18px;">Reel editing, captions, hashtags and a publishing system built around what your customers actually watch. Tracked weekly on reach and interest.</p>
+          <p class="reveal" style="margin-top:10px;font-family:var(--font-mono);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--gray);">Moves: reach &amp; interest</p>
+        </div>
       </div>
-      <div class="svc-card reveal">
-        <div class="top"><span class="idx">S&nbsp;/&nbsp;02</span><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/></svg></div></div>
-        <h3>AI Automation</h3>
-        <p>AI agents and workflows for enquiry handling, lead qualification, follow-ups, and repetitive communication. Lead capture that never sleeps and never drops a lead.</p>
-        <div class="svc-metric"><b>Moves:</b> response time and hours saved</div>
-        <a class="svc-link" href="contact.html">Automate a task <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <div class="svc-row" style="cursor:default;">
+        <span class="num">02</span>
+        <div>
+          <span class="name">Web<br/>Builds</span>
+          <p class="reveal" style="margin-top:22px;max-width:52ch;color:var(--gray);font-size:18px;">Modern, mobile-responsive sites with one clear call to action, lead forms and WhatsApp contact. Built to get found and contacted.</p>
+          <p class="reveal" style="margin-top:10px;font-family:var(--font-mono);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--gray);">Moves: leads &amp; enquiries</p>
+        </div>
       </div>
-      <div class="svc-card reveal">
-        <div class="top"><span class="idx">S&nbsp;/&nbsp;03</span><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></div></div>
-        <h3>Content &amp; Reels</h3>
-        <p>Reel editing, captions, hashtags, and content strategy built around what your customers actually watch. A publishing system your audience sees, tracked weekly.</p>
-        <div class="svc-metric"><b>Moves:</b> reach and interest</div>
-        <a class="svc-link" href="contact.html">Start content <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <div class="svc-row" style="cursor:default;">
+        <span class="num">03</span>
+        <div>
+          <span class="name">Business<br/>Automation</span>
+          <p class="reveal" style="margin-top:22px;max-width:52ch;color:var(--gray);font-size:18px;">AI agents and workflows for enquiry handling, lead qualification and follow-ups. Systems that never sleep and never drop a lead.</p>
+          <p class="reveal" style="margin-top:10px;font-family:var(--font-mono);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--gray);">Moves: response time &amp; hours saved</p>
+        </div>
       </div>
     </div>
+  </div>
+</section>
 
-    <div class="section-head" style="margin-top:104px">
-      <div class="section-label reveal">The common thread</div>
-      <h2 class="sec reveal">One owner, one number, each week.</h2>
-      <p class="sec-lead reveal">Every service runs on the same rule. A single person owns it, a single weekly number measures it, and we report the number &mdash; not how busy we looked.</p>
+<section class="sec--white">
+  <div class="container">
+    <div class="sec-head reveal"><span class="sec-no accent-navy">The common thread</span></div>
+    <div class="phil reveal">
+      <span class="mono-label" style="color:var(--navy);">Every service runs on the same rule</span>
+      <div class="rule">One owner</div>
+      <div class="rule">One number</div>
+      <div class="rule">One weekly measurement</div>
     </div>
-    <div class="principle-list">
-      <div class="principle reveal"><div class="n">RULE 1</div><div class="q">One owner per role</div><p>No shared responsibility with no one accountable. Every service has a single named owner.</p></div>
-      <div class="principle reveal"><div class="n">RULE 2</div><div class="q">One weekly number</div><p>Leads, hours saved, reach. One number that tells you if the week worked.</p></div>
-      <div class="principle reveal"><div class="n">RULE 3</div><div class="q">Paid on results</div><p>Quoted on the outcome you need, not on billable hours or looking productive.</p></div>
-    </div>
+    <div class="reveal" style="margin-top:50px;"><a class="btn btn--solid" href="contact.html">Start a Project <span class="arr">↗</span></a></div>
   </div>
 </section>
 
 <footer>
-  <div class="container footer-wrap">
-    <div class="brand">Zenvar<span class="dot">.</span></div>
-    <div class="footer-nav">
-      <a href="index.html">Home</a>
-      <a href="number.html">The Number</a>
-      <a href="process.html">Process</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="contact.html">Start a Project</a>
+  <div class="container">
+    <div class="foot-hero">
+      <img class="logo" src="zenvar-logo.svg" alt="Zenvar" />
+      <div class="fwm">Zenvar</div>
+      <div class="ftag">Build what moves.</div>
     </div>
-    <div class="footer-meta">Signal over noise. Numbers over feelings.</div>
+    <div class="foot-grid">
+      <div class="foot-col">
+        <h4>Services</h4>
+        <a href="services.html">Content</a>
+        <a href="services.html">Web</a>
+        <a href="services.html">Automation</a>
+      </div>
+      <div class="foot-col">
+        <h4>Studio</h4>
+        <a href="work.html">Work</a>
+        <a href="about.html">About</a>
+        <a href="process.html">Process</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="foot-col">
+        <h4>Social</h4>
+        <a href="#">Instagram</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">YouTube</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Zenvar</span>
+      <span>India / Worldwide</span>
+    </div>
   </div>
 </footer>
 
