@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact · Zenvar</title>
+<meta name="description" content="Start a project with Zenvar. One short form: tell us the number you want to move, and we reply fast with the number we will move first." />
+<meta name="theme-color" content="#0B0E13" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;450;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230B0E13'/%3E%3Cpath d='M9 20h5v-8h4v8h5' fill='none' stroke='%236EE7A8' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+<div class="env" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<header id="header">
+  <nav class="container">
+    <a class="brand" href="index.html">Zenvar<span class="dot">.</span></a>
+    <div class="nav-links">
+      <a href="services.html">Services</a>
+      <a href="number.html">The Number</a>
+      <a href="process.html">Process</a>
+      <a href="team.html">Team</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="contact.html" class="nav-cta active">Start a Project</a>
+    </div>
+  </nav>
+</header>
+
+<section class="page-hero" id="top">
+  <div class="container">
+    <div class="crumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Contact</div>
+    <div class="kicker reveal">Start a project</div>
+    <h1 class="reveal">Tell us the number <span class="accent">you want to move.</span></h1>
+    <p class="sub reveal">One short form. No proposal PDFs stacked in a queue. We reply fast, and we bring the number we would move first.</p>
+  </div>
+</section>
+
+<section style="padding-top:24px" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <h3>What you get back</h3>
+        <ul>
+          <li><b>A fast reply.</b> We answer quickly with a person, not an autoresponder.</li>
+          <li><b>One number.</b> The single metric we would move first for your business.</li>
+          <li><b>A small first step.</b> Proof of progress before we talk about a bigger scope.</li>
+        </ul>
+        <p class="contact-email">Direct: <a href="mailto:hello@zenvar.co">hello@zenvar.co</a></p>
+        <p class="contact-meta">Built in India &middot; serving small and mid-size businesses</p>
+      </div>
+      <form id="leadForm" class="lead-form reveal" novalidate>
+        <div class="field">
+          <label for="name">Your name</label>
+          <input id="name" name="name" type="text" placeholder="How should we address you?" autocomplete="name" required />
+        </div>
+        <div class="field">
+          <label for="email">Your email</label>
+          <input id="email" name="email" type="email" placeholder="you@company.com" autocomplete="email" required />
+        </div>
+        <div class="field">
+          <label for="service">What do you need?</label>
+          <select id="service" name="service" required>
+            <option value="A website">A website</option>
+            <option value="AI automation">AI automation</option>
+            <option value="Content and reels">Content and reels</option>
+            <option value="Not sure yet">Not sure yet</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="msg">The number you want to move</label>
+          <textarea id="msg" name="msg" rows="4" placeholder="e.g. More enquiries from local searches, or a faster reply to leads"></textarea>
+        </div>
+        <div id="form-status" class="form-status" aria-live="polite"></div>
+        <button type="submit" class="btn btn-primary btn-block">Send it</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-wrap">
+    <div class="brand">Zenvar<span class="dot">.</span></div>
+    <div class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="number.html">The Number</a>
+      <a href="process.html">Process</a>
+      <a href="team.html">Team</a>
+      <a href="pricing.html">Pricing</a>
+    </div>
+    <div class="footer-meta">Signal over noise. Numbers over feelings.</div>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>
