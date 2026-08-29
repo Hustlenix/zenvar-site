@@ -3,237 +3,324 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Zenvar — Content growth, website builds, and automation that fix what limits growth</title>
+<title>Zenvar — Content, Websites &amp; Automation that move a number</title>
 <meta name="description" content="Zenvar helps service businesses grow with content that earns attention, websites that convert, and automation that removes manual work. Signal over noise, numbers over feelings." />
 <meta property="og:title" content="Zenvar — Digital services that fix what limits growth" />
 <meta property="og:description" content="Content growth, website builds, and business automation. A small team, one owner per role, one metric each." />
 <meta property="og:type" content="website" />
-<meta name="theme-color" content="#0a0c0e" />
+<meta name="theme-color" content="#FBFBFA" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
   :root {
-    --bg: #0a0c0e;
-    --bg-2: #0e1114;
-    --panel: #12161a;
-    --line: rgba(255,255,255,0.08);
-    --line-strong: rgba(255,255,255,0.16);
-    --text: #f2f5f7;
-    --muted: #9aa5ad;
-    --accent: #2dd4bf;
-    --accent-dim: rgba(45,212,191,0.14);
-    --radius: 14px;
-    --maxw: 1180px;
-    --font: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    --bg: #FBFBFA;
+    --bg-2: #F4F5F3;
+    --panel: #FFFFFF;
+    --ink: #0B0E0D;
+    --muted: #5B6561;
+    --line: rgba(11,14,13,0.09);
+    --line-strong: rgba(11,14,13,0.16);
+    --accent: #0E9F6E;
+    --accent-ink: #0B5C40;
+    --accent-soft: rgba(14,159,110,0.10);
+    --ring: rgba(14,159,110,0.45);
+    --radius: 16px;
+    --radius-sm: 10px;
+    --maxw: 1160px;
+    --font-body: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    --font-display: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+    --ease: cubic-bezier(.22,.61,.36,1);
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
   body {
-    font-family: var(--font);
+    font-family: var(--font-body);
     background: var(--bg);
-    color: var(--text);
+    color: var(--ink);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
     overflow-x: hidden;
   }
   a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
   .container { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+  /* ---------- FOCUS ---------- */
+  :focus-visible { outline: 2px solid var(--ring); outline-offset: 3px; border-radius: 4px; }
 
   /* ---------- NAV ---------- */
   header {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    padding: 18px 0;
-    transition: background 0.3s, box-shadow 0.3s;
+    transition: background .35s var(--ease), box-shadow .35s var(--ease), border-color .35s var(--ease);
+    border-bottom: 1px solid transparent;
   }
   header.scrolled {
-    background: rgba(10,12,14,0.85);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--line);
+    background: rgba(251,251,250,0.82);
+    backdrop-filter: blur(14px) saturate(140%);
+    border-bottom-color: var(--line);
   }
-  nav.container { display: flex; align-items: center; justify-content: space-between; }
-  .brand { font-weight: 800; letter-spacing: 0.12em; font-size: 15px; color: var(--text); text-transform: uppercase; }
-  .brand span { color: var(--accent); }
-  .nav-links { display: flex; gap: 30px; align-items: center; }
-  .nav-links a { font-size: 14px; color: var(--muted); transition: color 0.2s; font-weight: 500; }
-  .nav-links a:hover { color: var(--text); }
+  nav.container { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+  .brand {
+    font-family: var(--font-display);
+    font-weight: 700; letter-spacing: -0.01em; font-size: 21px; color: var(--ink);
+    display: inline-flex; align-items: baseline;
+  }
+  .brand .dot { color: var(--accent); }
+  .nav-links { display: flex; gap: 32px; align-items: center; }
+  .nav-links a:not(.nav-cta) {
+    font-size: 14.5px; color: var(--muted); font-weight: 500;
+    transition: color .2s var(--ease); position: relative;
+  }
+  .nav-links a:not(.nav-cta):hover { color: var(--ink); }
   .nav-cta {
-    font-size: 14px; font-weight: 600;
-    color: #061214;
-    background: var(--accent);
-    padding: 9px 18px; border-radius: 999px;
+    font-size: 14.5px; font-weight: 600; color: #fff;
+    background: var(--ink);
+    padding: 10px 20px; border-radius: 999px;
+    transition: transform .18s var(--ease), background .2s var(--ease);
   }
-  .nav-cta:hover { background: #3ee0c9; }
-  @media (max-width: 720px) { .nav-links a:not(.nav-cta) { display: none; } }
+  .nav-cta:hover { background: var(--accent); transform: translateY(-1px); }
+  @media (max-width: 760px) { .nav-links a:not(.nav-cta) { display: none; } }
 
   /* ---------- HERO ---------- */
   .hero {
     position: relative;
-    min-height: 100vh;
-    display: flex; align-items: center;
-    padding-top: 80px;
+    min-height: 100svh;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center;
+    padding: 120px 0 90px;
     overflow: hidden;
   }
-  .hero-bg {
+  .hero-canvas {
     position: absolute; inset: 0; z-index: 0;
+    width: 100%; height: 100%;
   }
+  .hero-glow {
+    position: absolute; z-index: 0; pointer-events: none;
+    border-radius: 50%; filter: blur(70px); opacity: .5;
+    background: radial-gradient(circle, rgba(14,159,110,0.14), transparent 70%);
+  }
+  .hero-glow.a { width: 520px; height: 520px; top: -120px; left: 8%; }
+  .hero-glow.b { width: 460px; height: 460px; bottom: -140px; right: 4%; background: radial-gradient(circle, rgba(14,159,110,0.10), transparent 70%); }
+  .hero > .container { position: relative; z-index: 2; max-width: 900px; }
   .hero label {
-    position: relative; z-index: 2;
-    display: inline-block;
-    font-size: 12px; font-weight: 600; letter-spacing: 0.2em;
-    text-transform: uppercase; color: var(--accent);
-    margin-bottom: 24px;
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 12.5px; font-weight: 600; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--accent-ink);
+    background: var(--accent-soft); border: 1px solid rgba(14,159,110,0.2);
+    padding: 8px 16px; border-radius: 999px; margin-bottom: 30px;
   }
+  .hero label .pulse { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); animation: pulse 2.4s infinite; }
+  @keyframes pulse { 0%,100% { opacity: 1; transform: scale(1);} 50% { opacity: .4; transform: scale(.8);} }
   .hero h1 {
-    position: relative; z-index: 2;
-    font-size: clamp(44px, 7.5vw, 84px);
+    font-family: var(--font-display);
+    font-size: clamp(42px, 6.6vw, 82px);
     line-height: 1.02;
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    max-width: 15ch;
+    font-weight: 600;
+    letter-spacing: -0.035em;
+    max-width: 16ch;
+    margin: 0 auto;
   }
-  .hero h1 .accent { color: var(--accent); }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--accent);
+    position: relative;
+    white-space: nowrap;
+  }
+  .hero h1 em::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: 0.04em;
+    height: 0.16em; background: var(--accent-soft); z-index: -1; border-radius: 2px;
+  }
   .hero p.sub {
-    position: relative; z-index: 2;
-    font-size: clamp(17px, 2vw, 20px);
+    font-size: clamp(17px, 1.9vw, 20px);
     color: var(--muted);
-    max-width: 46ch;
-    margin: 26px 0 34px;
-    font-weight: 400;
+    max-width: 54ch;
+    margin: 28px auto 38px;
   }
-  .hero-ctas {
-    position: relative; z-index: 2;
-    display: flex; gap: 16px; flex-wrap: wrap;
-  }
+  .hero-ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
   .btn {
+    font-family: var(--font-body);
     font-size: 15px; font-weight: 600;
     padding: 14px 26px; border-radius: 999px;
-    display: inline-block; cursor: pointer; border: none;
-    transition: transform 0.15s, background 0.2s, box-shadow 0.2s;
+    display: inline-block; cursor: pointer; border: 1px solid transparent;
+    transition: transform .18s var(--ease), background .2s var(--ease), color .2s var(--ease), border-color .2s var(--ease), box-shadow .25s var(--ease);
   }
-  .btn-primary {
-    background: var(--accent); color: #061214;
-  }
-  .btn-primary:hover { background: #3ee0c9; transform: translateY(-1px); }
-  .btn-ghost {
-    background: transparent; color: var(--text);
-    border: 1px solid var(--line-strong);
-  }
-  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+  .btn-primary { background: var(--accent); color: #fff; box-shadow: 0 1px 0 rgba(0,0,0,0.05), 0 8px 20px -8px rgba(14,159,110,0.5); }
+  .btn-primary:hover { background: #0b8a5f; transform: translateY(-2px); box-shadow: 0 4px 24px -6px rgba(14,159,110,0.55); }
+  .btn-ghost { background: var(--panel); color: var(--ink); border-color: var(--line-strong); }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent-ink); transform: translateY(-2px); }
 
   .scroll-hint {
-    position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
-    color: var(--muted); font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase;
-    z-index: 2;
+    position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%);
+    color: var(--muted); font-size: 12px; letter-spacing: .22em; text-transform: uppercase;
+    z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 10px;
   }
+  .scroll-hint .mouse { width: 18px; height: 30px; border: 1.5px solid var(--line-strong); border-radius: 12px; position: relative; }
+  .scroll-hint .mouse::after {
+    content: ""; position: absolute; top: 6px; left: 50%; transform: translateX(-50%);
+    width: 3px; height: 6px; border-radius: 3px; background: var(--accent);
+    animation: wheel 1.8s infinite;
+  }
+  @keyframes wheel { 0% { opacity: 1; transform: translate(-50%,0);} 70% { opacity: 0; transform: translate(-50%,8px);} 100% { opacity: 0; } }
 
-  /* ---------- SECTIONS GENERAL ---------- */
-  section { padding: 110px 0; position: relative; }
+  /* Entrance animation */
+  .rise { opacity: 0; transform: translateY(22px); }
+  .rise.in { animation: riseIn .8s var(--ease) forwards; }
+  @keyframes riseIn { to { opacity: 1; transform: none; } }
+
+  /* ---------- SECTIONS ---------- */
+  section { padding: 96px 0; }
+  .section-head { max-width: 720px; margin-bottom: 52px; }
   .section-label {
-    font-size: 12px; font-weight: 600; letter-spacing: 0.2em;
-    text-transform: uppercase; color: var(--accent); margin-bottom: 18px;
+    font-size: 12px; font-weight: 600; letter-spacing: .16em;
+    text-transform: uppercase; color: var(--accent-ink); margin-bottom: 16px;
   }
   h2.sec {
-    font-size: clamp(34px, 5vw, 56px);
-    line-height: 1.05; font-weight: 800; letter-spacing: -0.02em;
-    max-width: 20ch; margin-bottom: 18px;
+    font-family: var(--font-display);
+    font-size: clamp(32px, 4.6vw, 52px);
+    line-height: 1.04; font-weight: 600; letter-spacing: -0.025em;
+    margin-bottom: 16px;
   }
-  .sec-lead { font-size: 19px; color: var(--muted); max-width: 62ch; }
+  .sec-lead { font-size: 18.5px; color: var(--muted); max-width: 60ch; }
 
-  /* ---------- SERVICES ---------- */
   #services { background: var(--bg-2); }
-  .svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 54px; }
-  @media (max-width: 900px) { .svc-grid { grid-template-columns: 1fr; } }
+  .svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  @media (max-width: 940px) { .svc-grid { grid-template-columns: 1fr; } }
   .svc-card {
     background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius);
-    padding: 30px; transition: border-color 0.25s, transform 0.25s;
+    padding: 32px;
+    transition: transform .28s var(--ease), box-shadow .28s var(--ease), border-color .28s var(--ease);
   }
-  .svc-card:hover { border-color: var(--accent); transform: translateY(-4px); }
-  .svc-num { font-size: 13px; color: var(--accent); font-weight: 700; letter-spacing: 0.1em; }
-  .svc-card h3 { font-size: 24px; font-weight: 700; margin: 14px 0 12px; letter-spacing: -0.01em; }
-  .svc-card p { color: var(--muted); font-size: 16px; }
+  .svc-card:hover { transform: translateY(-5px); box-shadow: 0 24px 48px -24px rgba(11,14,13,0.16); border-color: rgba(14,159,110,0.4); }
+  .svc-card .ic {
+    width: 42px; height: 42px; border-radius: 12px;
+    background: var(--accent-soft); color: var(--accent-ink);
+    display: grid; place-items: center; margin-bottom: 20px;
+  }
+  .svc-card .ic svg { width: 22px; height: 22px; }
+  .svc-card h3 { font-family: var(--font-display); font-size: 22px; font-weight: 600; margin-bottom: 10px; letter-spacing: -0.01em; }
+  .svc-card p { color: var(--muted); font-size: 15.5px; }
   .svc-metric {
-    color: var(--muted); font-size: 13px; margin-top: 18px;
-    border-top: 1px solid var(--line); padding-top: 12px;
+    color: var(--muted); font-size: 13.5px; margin-top: 20px;
+    border-top: 1px solid var(--line); padding-top: 14px;
   }
-  .svc-metric b { color: var(--text); font-weight: 600; }
+  .svc-metric b { color: var(--ink); font-weight: 600; }
+
+  /* ---------- NUMBER STRIP ---------- */
+  .stat-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 8px; }
+  @media (max-width: 760px) { .stat-strip { grid-template-columns: 1fr; } }
+  .stat { padding: 8px 0; }
+  .stat .n { font-family: var(--font-display); font-size: 44px; font-weight: 600; letter-spacing: -0.03em; color: var(--ink); }
+  .stat .n span { color: var(--accent); }
+  .stat .l { color: var(--muted); font-size: 15px; margin-top: 4px; }
 
   /* ---------- PIPELINE ---------- */
-  #pipeline { position: relative; overflow: hidden; }
-  .pipe { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 60px; position: relative; }
-  @media (max-width: 820px) { .pipe { grid-template-columns: 1fr; gap: 20px; } }
-  .pipe-step { padding: 0 30px; position: relative; }
+  .pipe { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 48px; position: relative; }
+  @media (max-width: 820px) { .pipe { grid-template-columns: 1fr; gap: 28px; } }
+  .pipe-step { padding: 0 26px; position: relative; }
+  .pipe-step:first-child { padding-left: 0; }
+  .pipe-step:last-child { padding-right: 0; }
   @media (min-width: 821px) {
     .pipe-step:not(:first-child)::before {
-      content: ""; position: absolute; left: -2px; top: 20px;
-      width: calc(100% - 0px); height: 2px; background: linear-gradient(90deg, var(--accent), transparent);
-      opacity: 0.35;
+      content: ""; position: absolute; left: -1px; top: 22px;
+      width: 100%; height: 2px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+      opacity: .5;
     }
   }
-  .pipe-step .step-no { font-size: 44px; font-weight: 800; color: var(--accent-dim); line-height: 1; }
-  .pipe-step h3 { font-size: 22px; font-weight: 700; margin: 14px 0 8px; }
+  .pipe-step .step-no {
+    font-family: var(--font-display); font-size: 40px; font-weight: 600;
+    color: var(--accent-soft); line-height: 1; letter-spacing: -0.02em;
+  }
+  .pipe-step h3 { font-family: var(--font-display); font-size: 20px; font-weight: 600; margin: 16px 0 8px; }
   .pipe-step p { color: var(--muted); font-size: 15px; }
-  .pipe-step .owner { font-size: 13px; color: var(--accent); font-weight: 600; margin-top: 12px; }
+  .pipe-step .owner { font-size: 13px; color: var(--accent-ink); font-weight: 600; margin-top: 14px; }
 
   /* ---------- PRINCIPLES ---------- */
   #principles { background: var(--bg-2); }
-  .principle-list { margin-top: 50px; display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
-  @media (max-width: 900px) { .principle-list { grid-template-columns: 1fr; } }
+  .principle-list { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+  @media (max-width: 940px) { .principle-list { grid-template-columns: 1fr; } }
   .principle {
-    border: 1px solid var(--line); border-radius: var(--radius); padding: 28px;
+    border: 1px solid var(--line); border-radius: var(--radius); padding: 30px;
     background: var(--panel);
+    transition: transform .28s var(--ease), box-shadow .28s var(--ease);
   }
-  .principle b { display: block; font-size: 22px; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.01em; }
-  .principle p { color: var(--muted); font-size: 16px; }
+  .principle:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -24px rgba(11,14,13,0.14); }
+  .principle .q { font-family: var(--font-display); font-size: 20px; font-weight: 600; margin-bottom: 12px; letter-spacing: -0.01em; }
+  .principle p { color: var(--muted); font-size: 15.5px; }
 
   /* ---------- TEAM ---------- */
-  .team-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; margin-top: 50px; }
-  @media (max-width: 900px) { .team-grid { grid-template-columns: 1fr 1fr; } }
+  .team-note { margin-top: 24px; font-size: 14px; color: var(--muted); }
+  .team-note a { color: var(--accent-ink); font-weight: 600; }
+  .team-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; margin-top: 40px; }
+  @media (max-width: 1000px) { .team-grid { grid-template-columns: repeat(2,1fr); } }
   @media (max-width: 560px) { .team-grid { grid-template-columns: 1fr; } }
   .member {
-    border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 24px;
+    border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 20px;
     background: var(--panel);
+    transition: transform .25s var(--ease), border-color .25s var(--ease);
   }
-  .member .name { font-size: 18px; font-weight: 700; }
-  .member .role { color: var(--accent); font-size: 14px; font-weight: 600; margin-top: 4px; }
-  .member .metric { color: var(--muted); font-size: 13px; margin-top: 12px; border-top: 1px solid var(--line); padding-top: 10px; }
+  .member:hover { transform: translateY(-3px); border-color: rgba(14,159,110,0.4); }
+  .member .avatar {
+    width: 40px; height: 40px; border-radius: 12px; margin-bottom: 14px;
+    background: var(--accent-soft); color: var(--accent-ink);
+    font-family: var(--font-display); font-weight: 600; font-size: 15px;
+    display: grid; place-items: center;
+  }
+  .member .name { font-family: var(--font-display); font-size: 16.5px; font-weight: 600; }
+  .member .role { color: var(--accent-ink); font-size: 13.5px; font-weight: 600; margin-top: 3px; }
+  .member .metric { color: var(--muted); font-size: 12.5px; margin-top: 12px; border-top: 1px solid var(--line); padding-top: 10px; }
 
-  /* ---------- FORM ---------- */
+  /* ---------- CONTACT ---------- */
   #contact { background: var(--bg-2); }
+  .contact-wrap { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: start; }
+  @media (max-width: 900px) { .contact-wrap { grid-template-columns: 1fr; } }
   .form-wrap {
-    max-width: 640px; margin-top: 40px;
-    background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 34px;
+    background: var(--panel); border: 1px solid var(--line); border-radius: 20px; padding: 36px;
+    box-shadow: 0 30px 60px -40px rgba(11,14,13,0.2);
   }
-  .form-row { margin-bottom: 20px; }
+  .form-row { margin-bottom: 18px; }
   .form-row label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 8px; }
   .form-row input, .form-row textarea, .form-row select {
-    width: 100%; padding: 13px 15px; border-radius: 10px;
-    background: var(--bg); border: 1px solid var(--line-strong); color: var(--text);
-    font-size: 15px; font-family: inherit; transition: border-color 0.2s;
+    width: 100%; padding: 13px 15px; border-radius: var(--radius-sm);
+    background: var(--bg); border: 1px solid var(--line-strong); color: var(--ink);
+    font-size: 15px; font-family: inherit; transition: border-color .2s var(--ease), box-shadow .2s var(--ease);
   }
   .form-row input:focus, .form-row textarea:focus, .form-row select:focus {
-    outline: none; border-color: var(--accent);
+    outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft);
   }
-  .form-row textarea { min-height: 110px; resize: vertical; }
+  .form-row textarea { min-height: 104px; resize: vertical; }
   .form-note { font-size: 13px; color: var(--muted); margin-top: 14px; }
-  #form-status { margin-top: 16px; font-size: 15px; font-weight: 600; min-height: 22px; }
-  #form-status.ok { color: var(--accent); }
-  #form-status.err { color: #f87171; }
+  #form-status { margin-top: 16px; font-size: 14.5px; font-weight: 600; min-height: 22px; }
+  #form-status.ok { color: var(--accent-ink); }
+  #form-status.err { color: #c0392b; }
+  .contact-side { position: sticky; top: 100px; }
+  .contact-side h3 { font-family: var(--font-display); font-size: 22px; font-weight: 600; margin-bottom: 14px; }
+  .contact-side p { color: var(--muted); font-size: 16px; max-width: 42ch; }
+  .contact-side .reply {
+    margin-top: 24px; font-size: 14px; color: var(--muted);
+    border-left: 3px solid var(--accent); padding-left: 14px;
+  }
 
   /* ---------- FOOTER ---------- */
-  footer { padding: 46px 0; border-top: 1px solid var(--line); }
-  .footer-wrap { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
-  .footer-wrap .brand { font-size: 13px; }
+  footer { border-top: 1px solid var(--line); padding: 40px 0; }
+  .footer-wrap { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; align-items: center; }
+  .footer-wrap .brand { font-size: 19px; }
+  .footer-nav { display: flex; gap: 24px; font-size: 13.5px; color: var(--muted); }
+  .footer-nav a:hover { color: var(--ink); }
   .footer-meta { font-size: 13px; color: var(--muted); }
-  .footer-nav { display: flex; gap: 22px; font-size: 13px; color: var(--muted); }
-  .footer-nav a:hover { color: var(--text); }
 
-  /* ---------- REVEAL ANIMATION (reduced-motion friendly) ---------- */
-  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s cubic-bezier(.2,.7,.2,1), transform 0.7s cubic-bezier(.2,.7,.2,1); }
+  /* ---------- REVEAL ---------- */
+  .reveal { opacity: 0; transform: translateY(26px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
   .reveal.visible { opacity: 1; transform: none; }
+
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    .reveal { opacity: 1; transform: none; transition: none; }
+    *, *::before, *::after { animation-duration: .001s !important; animation-iteration-count: 1 !important; transition-duration: .001s !important; }
+    .reveal, .rise { opacity: 1 !important; transform: none !important; }
+    .scroll-hint .mouse::after { animation: none; }
+    .hero label .pulse { animation: none; }
   }
 </style>
 </head>
@@ -241,7 +328,7 @@
 
 <header id="header">
   <nav class="container">
-    <a class="brand" href="#top">Zen<span>var</span></a>
+    <a class="brand" href="#top">Zenvar<span class="dot">.</span></a>
     <div class="nav-links">
       <a href="#services">Services</a>
       <a href="#pipeline">Process</a>
@@ -254,44 +341,59 @@
 
 <!-- HERO -->
 <section class="hero" id="top">
-  <canvas class="hero-bg" id="heroBg" aria-hidden="true"></canvas>
+  <canvas class="hero-canvas" id="heroBg" aria-hidden="true"></canvas>
+  <div class="hero-glow a" aria-hidden="true"></div>
+  <div class="hero-glow b" aria-hidden="true"></div>
   <div class="container">
-    <label>Zenvar - Digital Services</label>
-    <h1>Don&rsquo;t just do more work. <span class="accent">Fix what is limiting growth.</span></h1>
-    <p class="sub">Zenvar helps service businesses grow with content that earns attention, websites that convert, and automation that removes the manual work.</p>
-    <div class="hero-ctas">
+    <label class="rise"><span class="pulse"></span> Zenvar &mdash; Digital Services</label>
+    <h1 class="rise" style="animation-delay:.08s">Fix what&rsquo;s <em>limiting growth</em>, not just the work.</h1>
+    <p class="sub rise" style="animation-delay:.16s">Content that earns attention, websites that convert, automation that removes the manual work. One small team, one owner per role, one number each.</p>
+    <div class="hero-ctas rise" style="animation-delay:.24s">
       <a href="#contact" class="btn btn-primary">Start a Project</a>
       <a href="#services" class="btn btn-ghost">See What We Do</a>
     </div>
   </div>
-  <div class="scroll-hint">Scroll</div>
+  <div class="scroll-hint"><span class="mouse"></span></div>
+</section>
+
+<!-- NUMBER STRIP -->
+<section id="bytheNumbers" style="padding: 40px 0 0; background: var(--bg);">
+  <div class="container">
+    <div class="stat-strip">
+      <div class="stat reveal"><div class="n">3<span>.</span></div><div class="l">Services, each with a weekly metric</div></div>
+      <div class="stat reveal"><div class="n">7<span>.</span></div><div class="l">Team members, one owner per role</div></div>
+      <div class="stat reveal"><div class="n">1<span>.</span></div><div class="l">Pipeline: leads, conversations, closed deals</div></div>
+    </div>
+  </div>
 </section>
 
 <!-- SERVICES -->
 <section id="services">
   <div class="container">
-    <div class="section-label reveal">What we do</div>
-    <h2 class="sec reveal">Three services. One goal: move a number.</h2>
-    <p class="sec-lead reveal">Every role has an owner and a weekly metric. We are paid for results, not for looking busy. These are the three levers we pull.</p>
+    <div class="section-head">
+      <div class="section-label reveal">What we do</div>
+      <h2 class="sec reveal">Three services. One goal: move a number.</h2>
+      <p class="sec-lead reveal">No busywork, no vanity metrics. Every service has one owner and one weekly number, and we&rsquo;re paid for results, not for looking busy.</p>
+    </div>
 
     <div class="svc-grid">
       <div class="svc-card reveal">
-        <div class="svc-num">01</div>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></div>
         <h3>Content Growth</h3>
         <p>Content that produces reach, not just output. We build a publishing system your audience actually sees.</p>
-        <div class="svc-metric"><b>Weekly metric:</b> Content published + marketing-driven reach</div>
+        <div class="svc-metric"><b>Weekly number:</b> Content published + reach</div>
       </div>
       <div class="svc-card reveal">
-        <div class="svc-num">02</div>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
         <h3>Website Builds</h3>
         <p>Websites built as systems, not brochures. One clear message, one CTA, short forms, fast on mobile.</p>
-        <div class="svc-metric"><b>Weekly metric:</b> Sites shipped + client outcomes</div>
+        <div class="svc-metric"><b>Weekly number:</b> Sites shipped + outcomes</div>
       </div>
       <div class="svc-card reveal">
-        <div class="svc-num">03</div>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/></svg></div>
         <h3>Business Automation</h3>
-        <p>Remove the repetitive work that eats your week. We find the bottleneck and automate it.</p>
-        <div class="svc-metric"><b>Weekly metric:</b> Automations shipped + client outcomes</div>
+        <p>Remove the repetitive work that eats your week. We find the bottleneck and automate it away.</p>
+        <div class="svc-metric"><b>Weekly number:</b> Automations shipped + outcomes</div>
       </div>
     </div>
   </div>
@@ -300,9 +402,11 @@
 <!-- PIPELINE -->
 <section id="pipeline">
   <div class="container">
-    <div class="section-label reveal">How we work</div>
-    <h2 class="sec reveal">One pipeline, three owners.</h2>
-    <p class="sec-lead reveal">Leads, qualified conversations, deals closed. Each step owned by one person, with a number attached. If a handoff gets unclear, it&rsquo;s the first thing we fix.</p>
+    <div class="section-head">
+      <div class="section-label reveal">How we work</div>
+      <h2 class="sec reveal">One pipeline, three owners.</h2>
+      <p class="sec-lead reveal">Leads, qualified conversations, deals closed. Each step owned by one person, with a number attached. If a handoff gets unclear, it&rsquo;s the first thing we fix.</p>
+    </div>
 
     <div class="pipe">
       <div class="pipe-step reveal">
@@ -330,19 +434,21 @@
 <!-- PRINCIPLES -->
 <section id="principles">
   <div class="container">
-    <div class="section-label reveal">Operating principles</div>
-    <h2 class="sec reveal">Three questions, every decision.</h2>
+    <div class="section-head">
+      <div class="section-label reveal">Operating principles</div>
+      <h2 class="sec reveal">Three questions, every decision.</h2>
+    </div>
     <div class="principle-list">
       <div class="principle reveal">
-        <b>Signal over noise</b>
+        <div class="q">Signal over noise</div>
         <p>Spend time on work that moves a client result or a team metric forward. Planning and looking busy are not signal.</p>
       </div>
       <div class="principle reveal">
-        <b>Attack the bottleneck</b>
+        <div class="q">Attack the bottleneck</div>
         <p>Before starting new work, identify what actually limits progress, then fix that first.</p>
       </div>
       <div class="principle reveal">
-        <b>Numbers over feelings</b>
+        <div class="q">Numbers over feelings</div>
         <p>&ldquo;I think I improved&rdquo; is not an update. Bring the number: leads, revenue, deliverables, deadlines hit.</p>
       </div>
     </div>
@@ -352,91 +458,108 @@
 <!-- TEAM -->
 <section id="team">
   <div class="container">
-    <div class="section-label reveal">The team</div>
-    <h2 class="sec reveal">Small team, one owner per role.</h2>
-    <p class="sec-lead reveal">No siloing. Each role has one owner and one weekly metric, and everyone is expected to be capable across web and automation.</p>
+    <div class="section-head">
+      <div class="section-label reveal">The team</div>
+      <h2 class="sec reveal">Small team, one owner per role.</h2>
+      <p class="sec-lead reveal">No siloing. Each role has one owner and one weekly metric, and everyone is expected to be capable across web and automation.</p>
+    </div>
 
     <div class="team-grid">
       <div class="member reveal">
+        <div class="avatar">HA</div>
+        <div class="name">Hemanathan</div>
+        <div class="role">Founder / CEO &middot; Sales</div>
+        <div class="metric">Deals closed, revenue, pipeline</div>
+      </div>
+      <div class="member reveal">
+        <div class="avatar">LA</div>
         <div class="name">Lalith</div>
-        <div class="role">CTO - Automation Lead</div>
-        <div class="metric">Automations shipped / client outcomes</div>
+        <div class="role">CTO &middot; Automation Lead</div>
+        <div class="metric">Automations shipped / outcomes</div>
       </div>
       <div class="member reveal">
+        <div class="avatar">DA</div>
         <div class="name">Darmigan</div>
-        <div class="role">CTO - Web Lead</div>
-        <div class="metric">Sites shipped / client outcomes</div>
+        <div class="role">CTO &middot; Web Lead</div>
+        <div class="metric">Sites shipped / outcomes</div>
       </div>
       <div class="member reveal">
+        <div class="avatar">CH</div>
         <div class="name">Charvesh</div>
         <div class="role">Content &amp; Marketing Lead</div>
-        <div class="metric">Content published &amp; marketing-driven reach</div>
+        <div class="metric">Content published &amp; reach</div>
       </div>
       <div class="member reveal">
+        <div class="avatar">HA</div>
         <div class="name">Hari</div>
         <div class="role">Content &amp; Marketing</div>
-        <div class="metric">Content edited / produced &amp; turnaround time</div>
+        <div class="metric">Content edited / turnaround</div>
       </div>
       <div class="member reveal">
+        <div class="avatar">NO</div>
         <div class="name">Noel</div>
         <div class="role">Operations &amp; SDR</div>
-        <div class="metric">Outreach conducted / leads engaged &amp; ops tasks</div>
+        <div class="metric">Outreach / leads engaged</div>
       </div>
       <div class="member reveal">
+        <div class="avatar">SH</div>
         <div class="name">Shanjay</div>
-        <div class="role">Lead Generation &amp; Customer Profiles</div>
-        <div class="metric">Leads generated &amp; profiles maintained</div>
-      </div>
-      <div class="member reveal">
-        <div class="name">Hemanathan</div>
-        <div class="role">Founder / CEO - Sales Closing</div>
-        <div class="metric">Deals closed, revenue, pipeline, team execution</div>
+        <div class="role">Lead Gen &amp; Profiles</div>
+        <div class="metric">Leads generated &amp; profiles</div>
       </div>
     </div>
+    <p class="team-note reveal">Zenvar is built in India, serving small and mid-size businesses. We avoid the complexity trap &mdash; no micro-tasks, no enterprise bloat.</p>
   </div>
 </section>
 
-<!-- CONTACT / FORM -->
+<!-- CONTACT -->
 <section id="contact">
   <div class="container">
-    <div class="section-label reveal">Start a project</div>
-    <h2 class="sec reveal">Tell us what is limiting your growth.</h2>
-    <p class="sec-lead reveal">One short form. No 10-field walls. We reply fast, and we bring the number.</p>
+    <div class="contact-wrap">
+      <div class="section-head" style="margin-bottom:0">
+        <div class="section-label reveal">Start a project</div>
+        <h2 class="sec reveal">Tell us what is limiting your growth.</h2>
+        <p class="sec-lead reveal">One short form. No 10-field walls. We reply fast, and we bring the number.</p>
+        <div class="contact-side reveal" style="position:static; margin-top:28px">
+          <div class="reply">We respond within one business day, with a clear next step and the metric we&rsquo;ll move first.</div>
+        </div>
+      </div>
 
-    <div class="form-wrap reveal">
-      <form id="leadForm" novalidate>
-        <div class="form-row">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" required autocomplete="name" placeholder="Your name" />
-        </div>
-        <div class="form-row">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required autocomplete="email" placeholder="you@company.com" />
-        </div>
-        <div class="form-row">
-          <label for="service">What do you need?</label>
-          <select id="service" name="service">
-            <option value="content">Content Growth</option>
-            <option value="website">Website Build</option>
-            <option value="automation">Business Automation</option>
-            <option value="all">Not sure yet</option>
-          </select>
-        </div>
-        <div class="form-row">
-          <label for="msg">What is limiting your growth?</label>
-          <textarea id="msg" name="message" placeholder="A short note is plenty."></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary" style="width:100%">Start a Project</button>
-        <p class="form-note">This form sends a direct email to the Zenvar team. No spam, no list, ever.</p>
-        <p id="form-status" role="status" aria-live="polite"></p>
-      </form>
+      <div class="form-wrap reveal">
+        <form id="leadForm" novalidate>
+          <div class="form-row">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required autocomplete="name" placeholder="Your name" />
+          </div>
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required autocomplete="email" placeholder="you@company.com" />
+          </div>
+          <div class="form-row">
+            <label for="service">What do you need?</label>
+            <select id="service" name="service">
+              <option value="content">Content Growth</option>
+              <option value="website">Website Build</option>
+              <option value="automation">Business Automation</option>
+              <option value="all">Not sure yet</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="msg">What is limiting your growth?</label>
+            <textarea id="msg" name="message" placeholder="A short note is plenty."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%">Start a Project</button>
+          <p class="form-note">This form opens a direct email to the Zenvar team. No spam, no list, ever.</p>
+          <p id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="container footer-wrap">
-    <div class="brand">Zen<span>var</span></div>
+    <div class="brand">Zenvar<span class="dot">.</span></div>
     <div class="footer-nav">
       <a href="#services">Services</a>
       <a href="#pipeline">Process</a>
@@ -451,21 +574,32 @@
   /* ---------- NAV SCROLL ---------- */
   var header = document.getElementById('header');
   window.addEventListener('scroll', function () {
-    if (window.scrollY > 10) header.classList.add('scrolled');
-    else header.classList.remove('scrolled');
+    header.classList.toggle('scrolled', window.scrollY > 10);
   }, { passive: true });
 
   /* ---------- REVEAL ON SCROLL ---------- */
   var revealEls = document.querySelectorAll('.reveal');
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) {
-      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
-    });
-  }, { threshold: 0.12 });
-  revealEls.forEach(function (el) { io.observe(el); });
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.14 });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('visible'); });
+  }
 
-  /* ---------- CODE-GENERATED ABSTRACT HERO VISUAL ----------
-     Animated system-network drawn on canvas. Dark, precise, on brand.
+  /* ---------- HERO ENTRANCE (staggered) ---------- */
+  var rises = document.querySelectorAll('.rise');
+  rises.forEach(function (el, i) {
+    requestAnimationFrame(function () {
+      setTimeout(function () { el.classList.add('in'); }, 120 + i * 90);
+    });
+  });
+
+  /* ---------- LIGHT-THEME ANIMATED NETWORK ----------
+     Code-generated hero visual. Light background, ink lines, one green accent.
      Respects prefers-reduced-motion (renders one static frame). */
   (function () {
     var canvas = document.getElementById('heroBg');
@@ -480,45 +614,50 @@
     size(); window.addEventListener('resize', size);
 
     var nodes = [];
-    var N = 46;
+    var N = 42;
     function init() {
       nodes = [];
       for (var i = 0; i < N; i++) {
         nodes.push({
           x: Math.random(), y: Math.random(),
-          vx: (Math.random() - 0.5) * 0.0006,
-          vy: (Math.random() - 0.5) * 0.0006,
-          r: 1 + Math.random() * 2
+          vx: (Math.random() - 0.5) * 0.0009,
+          vy: (Math.random() - 0.5) * 0.0009,
+          r: 1 + Math.random() * 2.2
         });
       }
     }
     init();
 
-    var ACCENT_R = 45, ACCENT_G = 212, ACCENT_B = 191;
+    var ACC = [14, 159, 110];
+    var INK = [11, 14, 13];
 
     function draw() {
       var w = canvas.width, h = canvas.height;
       if (!w || !h) { requestAnimationFrame(draw); return; }
       ctx.clearRect(0, 0, w, h);
-      // subtle base glow
-      var g = ctx.createRadialGradient(w*0.2, h*0.3, 0, w*0.2, h*0.3, w*0.6);
-      g.addColorStop(0, 'rgba(45,212,191,0.06)');
-      g.addColorStop(1, 'rgba(0,0,0,0)');
-      ctx.fillStyle = g; ctx.fillRect(0,0,w,h);
 
-      // links
+      // links (green, near hero center; fade), with a faint ink whisper
       for (var i = 0; i < nodes.length; i++) {
-        for (var j = i+1; j < nodes.length; j++) {
+        for (var j = i + 1; j < nodes.length; j++) {
           var dx = (nodes[i].x - nodes[j].x) * w;
           var dy = (nodes[i].y - nodes[j].y) * h;
-          var d = Math.sqrt(dx*dx + dy*dy);
-          if (d < 170) {
-            var a = (1 - d/170) * 0.35;
-            ctx.strokeStyle = 'rgba(' + ACCENT_R + ',' + ACCENT_G + ',' + ACCENT_B + ',' + a + ')';
+          var d = Math.sqrt(dx * dx + dy * dy);
+          if (d < 150) {
+            var a = (1 - d / 150) * 0.14;
+            ctx.strokeStyle = 'rgba(' + INK[0] + ',' + INK[1] + ',' + INK[2] + ',' + a + ')';
             ctx.lineWidth = 1;
             ctx.beginPath();
-            ctx.moveTo(nodes[i].x*w, nodes[i].y*h);
-            ctx.lineTo(nodes[j].x*w, nodes[j].y*h);
+            ctx.moveTo(nodes[i].x * w, nodes[i].y * h);
+            ctx.lineTo(nodes[j].x * w, nodes[j].y * h);
+            ctx.stroke();
+          }
+          if (d < 120) {
+            var a2 = (1 - d / 120) * 0.20;
+            ctx.strokeStyle = 'rgba(' + ACC[0] + ',' + ACC[1] + ',' + ACC[2] + ',' + a2 + ')';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(nodes[i].x * w, nodes[i].y * h);
+            ctx.lineTo(nodes[j].x * w, nodes[j].y * h);
             ctx.stroke();
           }
         }
@@ -526,12 +665,12 @@
       // nodes
       for (var k = 0; k < nodes.length; k++) {
         var n = nodes[k];
-        ctx.fillStyle = 'rgba(' + ACCENT_R + ',' + ACCENT_G + ',' + ACCENT_B + ',0.85)';
+        ctx.fillStyle = 'rgba(' + ACC[0] + ',' + ACC[1] + ',' + ACC[2] + ',0.6)';
         ctx.beginPath();
-        ctx.arc(n.x*w, n.y*h, n.r, 0, Math.PI*2);
+        ctx.arc(n.x * w, n.y * h, n.r, 0, Math.PI * 2);
         ctx.fill();
       }
-      if (reduce) return; // single static frame
+      if (reduce) return;
       requestAnimationFrame(draw);
     }
 
@@ -548,9 +687,7 @@
     setInterval(step, 16);
   })();
 
-  /* ---------- LEAD FORM ----------
-     Honest static-site delivery: opens a mailto so leads reach the team directly.
-     When Deliverable 2's backend is live, swap this to POST to the API. */
+  /* ---------- LEAD FORM (static mailto delivery) ---------- */
   document.getElementById('leadForm').addEventListener('submit', function (e) {
     e.preventDefault();
     var f = this,
@@ -572,7 +709,6 @@
       'Service: ' + service + '\n\n' +
       'What is limiting your growth?\n' + msg
     );
-    // Replace with the real team inbox.
     window.location.href = 'mailto:hello@zenvar.co?subject=' + subject + '&body=' + body;
     status.className = 'ok';
     status.textContent = 'Opening your email app. Thanks for reaching out.';
