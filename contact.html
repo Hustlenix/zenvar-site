@@ -3,109 +3,141 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Contact — Zenvar</title>
-<meta name="description" content="Start a project with Zenvar. Tell us what you are building and we will take it from there." />
+<title>Zenvar · Start a project</title>
+<meta name="description" content="Start a project with Zenvar. Tell us the problem in three short steps and we bring the number we will move first." />
 <meta name="theme-color" content="#0B0B0B" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css" />
-<link rel="icon" type="image/svg+xml" href="zenvar-logo.svg" />
+<link rel="icon" type="image/svg+xml" href="logo.svg" />
 </head>
 <body>
 
+<a class="skip" href="#main">Skip to content</a>
 <div class="grain" aria-hidden="true"></div>
 
-<header id="header">
-  <div class="container nav-inner">
-    <a class="nav-brand" href="index.html">
-      <img class="logo" src="zenvar-logo.svg" alt="" />
-      <span class="wm">Zenvar</span>
-    </a>
-    <nav class="nav-links">
-      <a href="work.html">Work</a>
-      <a href="services.html">Services</a>
-      <a href="process.html">Process</a>
-      <a href="about.html">About</a>
-      <a href="contact.html" class="nav-cta">Start a Project <span class="arr">↗</span></a>
-    </nav>
+<header class="nav" id="top">
+  <div class="container">
+    <div class="nav-row">
+      <a class="nav-brand" href="index.html">
+        <img src="logo.svg" alt="" width="34" height="34" />
+        <span class="word">Zenvar<span class="dot">.</span></span>
+      </a>
+      <nav class="nav-links" aria-label="Main">
+        <a class="lnk" href="work.html">Work</a>
+        <a class="lnk" href="services.html">Services</a>
+        <a class="lnk" href="about.html">About</a>
+        <a class="nav-cta" href="contact.html">Start a project <span class="arr">↗</span></a>
+      </nav>
+    </div>
   </div>
 </header>
 
-<section class="page-hero">
+<main id="main">
+<section class="page-hero s-white">
   <div class="container">
-    <div class="crumb"><a href="index.html">Home</a> / Contact</div>
-    <h1 class="display reveal">Start a<br/>project.</h1>
-    <p class="sub reveal">Tell us what you are building. One week to first draft, one number to measure.</p>
+    <div class="page-kicker"><b>Contact</b> / start a project</div>
+    <h1 class="page-title rv">Turn the<br/>problem into a number.</h1>
+    <p class="page-lede rv d1">Three short steps. We name the number we will move first, and we only start if the number can move.</p>
   </div>
 </section>
 
-<section class="sec--black" style="padding-top:10px;">
+<section class="s-white" style="padding-top:0">
   <div class="container">
-    <div class="sec-head reveal"><span class="sec-no">The intake</span></div>
-    <h2 class="big reveal" style="font-size:clamp(28px,5vw,64px);">What are you<br/>building?</h2>
+    <div class="intake">
+      <div class="intake-left">
+        <div id="intakeBlock">
+          <div id="intake">
+            <div class="form-step">
+              <div class="q">What are you building?</div>
+              <label class="opt"><input type="radio" name="kind" /><span class="lab">Website</span></label>
+              <label class="opt"><input type="radio" name="kind" /><span class="lab">Content</span></label>
+              <label class="opt"><input type="radio" name="kind" /><span class="lab">Automation</span></label>
+              <label class="opt" data-next><input type="radio" name="kind" /><span class="lab">Something else</span></label>
+            </div>
 
-    <form class="lead-form reveal" id="leadForm" novalidate>
-      <div class="fld">
-        <label for="kind">Project type</label>
-        <select id="kind" name="kind">
-          <option value="">Choose one</option>
-          <option>Website</option>
-          <option>Content</option>
-          <option>Automation</option>
-          <option>Multiple / unclear</option>
-        </select>
-      </div>
-      <div class="fld">
-        <label for="name">Your name</label>
-        <input id="name" name="name" type="text" autocomplete="name" />
-      </div>
-      <div class="fld">
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" autocomplete="email" />
-      </div>
-      <div class="fld">
-        <label for="msg">What is the number you want to move?</label>
-        <textarea id="msg" name="msg"></textarea>
-      </div>
-      <button class="btn btn--line-dark" type="submit">Send it <span class="arr">↗</span></button>
-      <div class="form-status" id="form-status" aria-live="polite"></div>
-      <p style="margin-top:30px;color:var(--gray);font-size:15px;max-width:46ch;">Or write to us directly: <a href="mailto:hello@zenvar.co" style="color:var(--white);border-bottom:1px solid var(--gray);">hello@zenvar.co</a></p>
-    </form>
-  </div>
-</section>
+            <div class="form-step">
+              <div class="q">Who are you?</div>
+              <div class="field">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" autocomplete="name" />
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" required />
+              </div>
+              <div style="display:flex;justify-content:flex-end">
+                <button class="tlink" type="button" data-next>Continue <span class="arr">→</span></button>
+              </div>
+            </div>
 
-<footer>
-  <div class="container">
-    <div class="foot-hero">
-      <img class="logo" src="zenvar-logo.svg" alt="Zenvar" />
-      <div class="fwm">Zenvar</div>
-      <div class="ftag">Build what moves.</div>
+            <div class="form-step">
+              <form id="intakeForm" novalidate>
+                <div class="q">Tell us about the problem.</div>
+                <div class="field">
+                  <label for="problem">What number are you trying to move?</label>
+                  <textarea id="problem" name="problem" required></textarea>
+                </div>
+                <div style="display:flex;justify-content:flex-end">
+                  <button class="btn btn-primary" type="submit">Send it <span class="arr">↗</span></button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div id="intakeDone" class="form-done" style="display:none">
+          <svg viewBox="0 0 120 120" fill="none" aria-hidden="true">
+            <circle cx="60" cy="60" r="52" stroke="#0B0B0B" stroke-width="2"/>
+            <path d="M38 61l15 15 30-32" stroke="#7CA8E4" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div class="ok">Message sent.</div>
+          <div class="sub">We reply fast, and we bring the number we will move first.</div>
+        </div>
+      </div>
+
+      <div class="intake-right rv">
+        <div class="about-stats">
+          <div class="about-stat"><span class="lab">Email</span><span class="val">hello@zenvar.in</span></div>
+          <div class="about-stat"><span class="lab">Reply</span><span class="val">Fast</span></div>
+          <div class="about-stat"><span class="lab">First step</span><span class="val">We name the number</span></div>
+          <div class="about-stat"><span class="lab">Only if</span><span class="val">The number can move</span></div>
+        </div>
+      </div>
     </div>
-    <div class="foot-grid">
-      <div class="foot-col">
-        <h4>Services</h4>
-        <a href="services.html">Content</a>
-        <a href="services.html">Web</a>
-        <a href="services.html">Automation</a>
-      </div>
-      <div class="foot-col">
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="footer-big" aria-hidden="true">
+    BUILD<br/>WHAT MOVES<span class="blu">.</span>
+  </div>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
         <h4>Studio</h4>
+        <a href="index.html">Home</a>
         <a href="work.html">Work</a>
+        <a href="services.html">Services</a>
         <a href="about.html">About</a>
-        <a href="process.html">Process</a>
         <a href="contact.html">Contact</a>
       </div>
-      <div class="foot-col">
-        <h4>Social</h4>
-        <a href="#">Instagram</a>
-        <a href="#">LinkedIn</a>
-        <a href="#">YouTube</a>
+      <div class="footer-col">
+        <h4>What we do</h4>
+        <a href="services.html">Web</a>
+        <a href="services.html">Content</a>
+        <a href="services.html">Automation</a>
+      </div>
+      <div class="footer-col">
+        <h4>Direct</h4>
+        <a href="mailto:hello@zenvar.in">hello@zenvar.in</a>
       </div>
     </div>
-    <div class="foot-bottom">
+    <div class="footer-bottom">
       <span>© 2026 Zenvar</span>
-      <span>India / Worldwide</span>
+      <span>Web · Content · Automation</span>
     </div>
   </div>
 </footer>
