@@ -82,7 +82,7 @@ button{font-family:inherit;cursor:pointer;background:none;border:none;color:inhe
 }
 .hero-type{position:relative;line-height:.86;letter-spacing:-.02em;font-weight:600}
 .hero-type .wd{display:block;overflow:clip}
-.hero-type .wd>span{display:block;will-change:transform,opacity}
+.hero-type .wd>span{display:inline-block;will-change:transform,opacity}
 .hero-size{font-size:clamp(64px,15.5vw,210px)}
 .hero-size .a{transform:translateY(3%);}
 .hero-size .b{transform:translateY(14%);}
